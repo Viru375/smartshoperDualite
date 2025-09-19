@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartshoper - Smart Price Comparison Platform</title>
+    
+    <meta name="description" content="Find the best deals across multiple e-commerce sites. Compare prices, track price history, and save money on your favorite products with Smartshoper.">
+    <meta name="author" content="Smartshoper Team">
+    
+    <meta property="og:title" content="Smartshoper - Smart Price Comparison Platform">
+    <meta property="og:description" content="Find the best deals across multiple e-commerce sites. Compare prices, track price history, and save money on your favorite products with Smartshoper.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop">
+    <meta property="og:image:alt" content="Smartshoper price comparison platform preview">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Smartshoper - Smart Price Comparison Platform">
+    <meta name="twitter:description" content="Find the best deals across multiple e-commerce sites. Compare prices, track price history, and save money on your favorite products with Smartshoper.">
+    <meta name="twitter:site" content="@smartshoper">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop">
+    
+    <link rel="canonical" href="https://smartshoper.com">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Smartshoper",
+      "url": "https://smartshoper.com",
+      "description": "Find the best deals across multiple e-commerce sites. Compare prices, track price history, and save money on your favorite products with Smartshoper.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Smartshoper"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <h1 class="logo">
+                            <span class="logo-icon">🛒</span>
+                            Smartshoper
+                        </h1>
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                    
+                    <div class="search-section">
+                        <div class="search-container">
+                            <select class="search-category" id="searchCategory">
+                                <option value="">All Categories</option>
+                            </select>
+                            <div class="search-input-container">
+                                <input type="text" id="searchInput" placeholder="Search for products..." class="search-input">
+                                <button class="voice-search-btn" id="voiceSearchBtn" title="Voice Search">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 1v6m0 6v6"></path>
+                                        <path d="M9 9v3a3 3 0 0 0 6 0V9a3 3 0 0 0-6 0z"></path>
+                                        <path d="M5 10v2a7 7 0 0 0 14 0v-2"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button class="search-btn" id="searchBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="M21 21l-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                            </svg>
+                            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                        <button class="wishlist-btn" id="wishlistBtn" title="Wishlist">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span class="wishlist-count" id="wishlistCount">0</span>
+                        </button>
+                        <button class="user-btn" id="userBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span id="userBtnText">Sign In</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <nav class="nav" id="mainNav">
+                    <div class="nav-categories" id="navCategories"></div>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <div class="container">
+                <div class="main-content" id="mainContent">
+                    <!-- Content will be dynamically loaded here -->
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Smartshoper</h3>
+                        <p>Your smart shopping companion for finding the best deals across the web.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#categories">Categories</a></li>
+                            <li><a href="#deals">Today's Deals</a></li>
+                            <li><a href="#about">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#help">Help Center</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Smartshoper. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Modals -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle">Sign In</h2>
+                <button class="modal-close" id="authModalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="authModalBody">
+                <!-- Auth form will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="productModalTitle">Product Details</h2>
+                <button class="modal-close" id="productModalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="productModalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="wishlistModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>My Wishlist</h2>
+                <button class="modal-close" id="wishlistModalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="wishlistModalBody">
+                <!-- Wishlist items will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <span class="notification-message" id="notificationMessage"></span>
+            <button class="notification-close" id="notificationClose">&times;</button>
+        </div>
+    </div>
+    
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
